@@ -1,0 +1,236 @@
+/*** General ***/
+
+:root {
+    --logo: #D4AB8B;
+    --dorado: #BCA177;
+    --marron: #63421E;
+    --marron-oscuro: #333030;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 'header' 'main' 'footer';
+    background-color: grey;
+    justify-content: center;
+    font-family: "Open Sans";
+}
+
+a,
+a:active,
+a:visited,
+a:hover {
+    color: white;
+    text-decoration: none !important;
+}
+
+
+/*** Header ***/
+
+header {
+    background-image: url(/assets/img/header/fondo-header-temp.jpg);
+    background-position: center center;
+    background-size: cover;
+    grid-area: 'header';
+    max-width: 1000px;
+}
+
+.card {
+    background: transparent;
+}
+
+header section {
+    display: grid;
+    grid-template-areas: 'card';
+    align-items: center;
+    justify-items: end;
+    justify-content: space-evenly;
+    align-content: center;
+    min-height: 40vh;
+}
+
+header .foto {
+    display: none;
+}
+
+header .card {
+    grid-area: card;
+    width: 100%;
+    border: 0;
+    min-height: 90%;
+    align-items: center;
+    justify-content: center;
+}
+
+header .card p {
+    width: 80%;
+    text-align: justify;
+    color: white;
+}
+
+header .card h2 {
+    text-transform: uppercase;
+    color: white;
+}
+
+header #banner {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+
+/*** Nav ***/
+
+header nav {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+}
+
+#logo-menu {
+    width: 96px;
+    height: 96px;
+}
+
+.navbar-brand {
+    color: var(--logo) !important;
+    font-family: 'Varela Round';
+    font-weight: 400;
+}
+
+
+/*** Main ***/
+
+main {
+    max-width: 1000px;
+    padding: 0;
+    margin: 0;
+}
+
+#productos {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+#productos article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    padding: 0;
+    margin: 0;
+}
+
+#productos article:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+#productos article:nth-child(even) {
+    flex-direction: row;
+}
+
+#productos h3 {
+    color: var(--dorado);
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+#productos .mas-info {
+    border: solid 2px var(--dorado);
+    color: var(--dorado);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 5px 20px;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+#productos figure {
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#productos figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+@supports(object-fit: cover) {
+    #productos figure img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+#productos summary {
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+}
+
+main h4 {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-weight: 700;
+    background-color: #666666;
+    margin: 0;
+}
+
+
+/*** Footer ***/
+
+footer {
+    background-color: var(--marron-oscuro);
+    color: white;
+    font-family: "Open Sans";
+}
+
+footer #encontranos {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+
+/**** Componentes ***/
+
+.boton-curvo {
+    border: solid 0;
+    height: 50px;
+    width: 200px !important;
+    border-radius: 25px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: auto;
+}
+
+@media screen and (min-width:768px) {
+    header section {
+        grid-template-areas: 'foto card';
+    }
+    header .foto {
+        grid-area: foto;
+        width: 50%;
+    }
+    header .card {
+        grid-area: card;
+        width: 50%;
+    }
+}
