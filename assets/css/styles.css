@@ -77,6 +77,8 @@ header .card p {
 header .card h2 {
     text-transform: uppercase;
     color: white;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 header #banner {
@@ -111,76 +113,6 @@ main {
     margin: 0;
 }
 
-#productos {
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 0;
-    margin: 0;
-}
-
-#productos article {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 350px;
-    padding: 0;
-    margin: 0;
-}
-
-#productos article:nth-child(odd) {
-    flex-direction: row-reverse;
-}
-
-#productos article:nth-child(even) {
-    flex-direction: row;
-}
-
-#productos h3 {
-    color: var(--dorado);
-    font-weight: 300;
-    text-transform: uppercase;
-}
-
-#productos .mas-info {
-    border: solid 2px var(--dorado);
-    color: var(--dorado);
-    font-weight: 700;
-    font-size: 14px;
-    padding: 5px 20px;
-    border-radius: 2px;
-    background-color: transparent;
-}
-
-#productos figure {
-    width: 50%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-#productos figure img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-}
-
-@supports(object-fit: cover) {
-    #productos figure img {
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
-    }
-}
-
-#productos summary {
-    list-style: none;
-    width: 50%;
-    height: 100%;
-    padding: 40px;
-}
-
 main h4 {
     width: 100%;
     text-align: center;
@@ -190,6 +122,153 @@ main h4 {
     font-weight: 700;
     background-color: #666666;
     margin: 0;
+}
+
+#productos,
+#destacados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    padding: 20px 0;
+    margin: 0;
+}
+
+#productos article,
+#destacados article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#productos h3,
+#destacados h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+#productos p,
+#destacados p {
+    text-align: justify;
+    font-size: 14px;
+}
+
+#productos .presentacion,
+#destacaados .presentacion {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#productos figure img,
+#destacados figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+@supports(object-fit: cover) {
+    #productos figure img,
+    #destacados figure img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+#productos figure,
+#destacados figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#productos summary,
+#destacados summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    max-width: 400px;
+}
+
+
+/*** productos ***/
+
+#productos {
+    background-color: black;
+    color: white;
+}
+
+#productos h3 {
+    color: var(--dorado);
+}
+
+#productos p {
+    color: white;
+}
+
+#productos .presentacion {
+    color: var(--dorado);
+}
+
+#productos .mas-info {
+    border: solid 2px var(--dorado);
+    color: var(--dorado);
+}
+
+#productos figure {
+    width: 350px;
+    height: 400px;
+}
+
+#productos summary {
+    min-height: 400px;
+}
+
+
+/*** Destacados ***/
+
+#destacados {
+    background-color: var(--dorado);
+    color: var(--marron);
+}
+
+#destacados h3 {
+    color: var(--marron);
+}
+
+#destacados p {
+    color: black;
+}
+
+#productos .presentacion {
+    color: var(--marron);
+}
+
+#destacados summary {
+    min-height: 350px;
+}
+
+#destacados .mas-info {
+    border: solid 2px var(--marron);
+    color: var(--marron);
+}
+
+#destacados figure {
+    width: 250px;
+    height: 250px;
 }
 
 
@@ -203,7 +282,27 @@ footer {
 
 footer #encontranos {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: "logo mapa" "menu navegacion" "redes redes";
+}
+
+#logo-footer {
+    grid-area: logo;
+}
+
+#mapa {
+    grid-area: mapa;
+}
+
+footer .menu {
+    grid-area: menu;
+}
+
+footer .navegacion {
+    grid-area: navegacion;
+}
+
+footer .redes {
+    grid-area: redes;
 }
 
 
@@ -219,6 +318,17 @@ footer #encontranos {
     font-weight: 700;
     background-color: rgba(0, 0, 0, 0.75);
     width: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mas-info {
+    font-weight: 700;
+    font-size: 14px;
+    padding: 5px 20px;
+    border-radius: 2px;
+    background-color: transparent;
+    margin: 30px 0;
 }
 
 @media screen and (min-width:768px) {
@@ -232,5 +342,35 @@ footer #encontranos {
     header .card {
         grid-area: card;
         width: 50%;
+    }
+    #productos summary,
+    #destacados summary {
+        min-width: 50%;
+    }
+    #destacados summary {
+        max-width: 60%;
+    }
+    #destacados article {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #productos article:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+    #productos article:nth-child(even) {
+        flex-direction: row;
+    }
+    #productos figure {
+        width: 50%;
+    }
+    #productos summary {
+        width: 50%;
+    }
+    #productos,
+    #destacados {
+        padding: 0;
+    }
+    footer #encontranos {
+        grid-template-areas: "logo mapa menu navegacion redes";
     }
 }
