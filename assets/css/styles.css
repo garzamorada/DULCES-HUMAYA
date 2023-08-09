@@ -132,7 +132,7 @@ main h4 {
     justify-content: center;
     width: 100%;
     padding: 0;
-    padding: 20px 0;
+    padding: 0;
     margin: 0;
 }
 
@@ -267,6 +267,7 @@ main h4 {
 }
 
 #destacados figure {
+    margin-top: 40px;
     width: 250px;
     height: 250px;
 }
