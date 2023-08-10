@@ -283,9 +283,9 @@ footer {
 
 footer #encontranos {
     display: grid;
-    grid-template-areas: "logo mapa" "menu navegacion" "redes redes";
+    grid-template-areas: "mapa mapa" "menu navegacion" "logo redes";
     padding-bottom: 40px;
-    grid-auto-columns: minmax(50%, 100%);
+    grid-template-columns: 50% 50%;
 }
 
 #logo-footer {
@@ -308,11 +308,21 @@ footer #encontranos {
     padding: 0 20px 20px 20px;
     font-size: 14px;
     font-weight: 700;
+    min-width: 240px;
 }
 
 #mapa img {
     max-width: 100%;
     height: auto;
+}
+
+#mapa h5 {
+    padding-left: 0;
+    text-align: center;
+}
+
+#mapa span {
+    padding: 10px 0;
 }
 
 footer .menu {
@@ -326,23 +336,42 @@ footer .navegacion {
 footer .redes {
     grid-area: redes;
     display: flex;
-    align-items: center;
-    justify-content: top;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
     padding: 0;
     margin: 0;
-    width: 15%;
 }
 
 footer .redes img {
-    max-width: 100%;
+    width: 40px;
     height: auto;
     margin: 5px;
 }
 
-footer nav ul {
+footer h4 {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    padding: 20px 0;
+}
+
+footer h5 {
+    padding-left: 30px;
+    width: 100%;
+    text-align: left;
+    font-weight: 200;
+    color: var(--dorado);
+}
+
+footer ul {
+    padding-left: 30px;
+    height: 175px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     list-style: none;
-    padding-left: 0;
     margin: 0;
 }
 
@@ -413,6 +442,6 @@ footer nav ul {
     }
     footer #encontranos {
         grid-template-areas: "logo menu navegacion redes mapa";
-        grid-auto-columns: minmax(15%, 25%);
+        grid-template-columns: 20% 20% 20% 10% 30%;
     }
 }
