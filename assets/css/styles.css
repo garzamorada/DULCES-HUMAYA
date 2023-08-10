@@ -254,7 +254,7 @@ main h4 {
 }
 
 #productos .presentacion {
-    color: var(--marron);
+    color: var(--logo);
 }
 
 #destacados summary {
@@ -284,14 +284,35 @@ footer {
 footer #encontranos {
     display: grid;
     grid-template-areas: "logo mapa" "menu navegacion" "redes redes";
+    padding-bottom: 40px;
+    grid-auto-columns: minmax(50%, 100%);
 }
 
 #logo-footer {
     grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 #mapa {
     grid-area: mapa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    padding: 0 20px 20px 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#mapa img {
+    max-width: 100%;
+    height: auto;
 }
 
 footer .menu {
@@ -304,6 +325,25 @@ footer .navegacion {
 
 footer .redes {
     grid-area: redes;
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 15%;
+}
+
+footer .redes img {
+    max-width: 100%;
+    height: auto;
+    margin: 5px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 
@@ -372,6 +412,7 @@ footer .redes {
         padding: 0;
     }
     footer #encontranos {
-        grid-template-areas: "logo mapa menu navegacion redes";
+        grid-template-areas: "logo menu navegacion redes mapa";
+        grid-auto-columns: minmax(15%, 25%);
     }
 }
