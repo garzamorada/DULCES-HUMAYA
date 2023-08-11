@@ -5,6 +5,7 @@
     --dorado: #BCA177;
     --marron: #63421E;
     --marron-oscuro: #333030;
+    --imagen: calc(60vw)
 }
 
 * {
@@ -281,6 +282,54 @@ footer {
     font-family: "Open Sans";
 }
 
+footer #recetas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-around;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+}
+
+#recetas h4 {
+    width: 100%;
+}
+
+#recetas figure {
+    width: 100%;
+    height: var(--imagen);
+}
+
+#recetas .receta {
+    width: var(--imagen);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dorado);
+    margin-bottom: 40px;
+}
+
+#recetas figcaption {
+    padding: 20px;
+}
+
+#recetas figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+@supports(object-fit: cover) {
+    #recetas figure img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
 footer #encontranos {
     display: grid;
     grid-template-areas: "mapa mapa" "menu navegacion" "logo redes";
@@ -393,6 +442,7 @@ footer ul {
 }
 
 .mas-info {
+    border: solid 2px;
     font-weight: 700;
     font-size: 14px;
     padding: 5px 20px;
@@ -402,6 +452,9 @@ footer ul {
 }
 
 @media screen and (min-width:768px) {
+     :root {
+        --imagen: calc(25vw)
+    }
     header section {
         grid-template-areas: 'foto card';
     }
@@ -443,5 +496,8 @@ footer ul {
     footer #encontranos {
         grid-template-areas: "logo menu navegacion redes mapa";
         grid-template-columns: 20% 20% 20% 10% 30%;
+    }
+    footer #recetas {
+        flex-direction: row;
     }
 }
