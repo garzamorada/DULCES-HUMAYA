@@ -5,7 +5,7 @@
     --dorado: #BCA177;
     --marron: #63421E;
     --marron-oscuro: #333030;
-    --imagen: calc(60vw)
+    --imagen: min(60vw, 300px)
 }
 
 * {
@@ -288,17 +288,20 @@ footer #recetas {
     justify-content: space-evenly;
     align-content: space-around;
     align-items: center;
-    padding: 40px;
     width: 100%;
 }
 
-#recetas h4 {
+footer h4 {
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 #recetas figure {
     width: 100%;
     height: var(--imagen);
+    margin: 0;
+    padding: 0;
 }
 
 #recetas .receta {
@@ -312,7 +315,13 @@ footer #recetas {
 }
 
 #recetas figcaption {
-    padding: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #recetas figure img {
@@ -330,11 +339,33 @@ footer #recetas {
     }
 }
 
+#recetas button {
+    font-size: 14px;
+    border-color: var(--marron);
+    color: var(--marron);
+    margin: 0;
+}
+
+.receta h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: var(--marron);
+}
+
+.receta p {
+    font-weight: 700;
+    font-size: 14px;
+    text-align: justify;
+}
+
 footer #encontranos {
     display: grid;
     grid-template-areas: "mapa mapa" "menu navegacion" "logo redes";
     padding-bottom: 40px;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 40%;
+    justify-content: space-evenly;
+    justify-items: center;
 }
 
 #logo-footer {
@@ -342,8 +373,15 @@ footer #encontranos {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 90%;
     padding: 0;
     margin: 0;
+}
+
+#logo-footer img {
+    width: 70%;
+    max-width: 150px;
+    height: auto;
 }
 
 #mapa {
@@ -376,14 +414,17 @@ footer #encontranos {
 
 footer .menu {
     grid-area: menu;
+    width: 90%;
 }
 
 footer .navegacion {
     grid-area: navegacion;
+    width: 90%;
 }
 
 footer .redes {
     grid-area: redes;
+    width: 90%;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -453,7 +494,7 @@ footer ul {
 
 @media screen and (min-width:768px) {
      :root {
-        --imagen: calc(25vw)
+        --imagen: min(25vw, 250px)
     }
     header section {
         grid-template-areas: 'foto card';
