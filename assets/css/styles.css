@@ -36,8 +36,8 @@ a:hover {
 
 header {
     background-image: url(/assets/img/header/fondo-header-temp.jpg);
-    background-position: center center;
-    background-size: cover;
+    background-position: top center;
+    background-size: 1200px;
     grid-area: 'header';
     max-width: 1000px;
 }
