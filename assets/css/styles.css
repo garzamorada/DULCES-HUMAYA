@@ -92,6 +92,10 @@ header #banner {
 header nav {
     background-color: rgba(0, 0, 0, 0.75);
     color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
 }
 
 #logo-menu {
